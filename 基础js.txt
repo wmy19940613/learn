@@ -1,0 +1,183 @@
+ 1 JavaScript的历史
+	liveScript -> JavaScript ->  JScript -> ECMAScript
+ 2 JavaScript与ECMAScript的关系
+	JavaScript 就是 ECMAScript 的一种实现。
+	一种弱类型的多范式的脚本语言。
+ 3. 数据类型
+	1》 基本数据类型     数字  字符串   bool值
+	2》复合数据类型     对象（自定义对象，内置对象（Array），单体对象（Math））
+	3》空类型：	null（空指针），undefined
+ 4. 语 句：
+	1》 条件语句：if语句
+	2》循环语句：for 、while 、do...while、for in
+	3》分支语句：switch
+	4》return语句：a: return； b: return value；
+	5》continue：结束本次循环
+	6》break a: 循环：结束循环；b:分支：跳出本分支
+ 5. == 与 ===
+	前者：比较内容，隐式类型转换；后者：比较内容和类型
+ 6. 装箱 与 拆箱
+	装箱： 将基本数据类型 包装成 其对应的 复合数据类型
+	拆箱： 将复合数据类型 转换成 其对应的 基本数据类型
+ 7. sort方法参数fn：
+	如果fn的返回值，大于 0 就交换 a 和 b 的位置
+	      	          小于 0 就不交换
+		          等于0 就保持其相对位置 
+ 8. 类型转换
+	1> 数字 -> 字符串:  toString，String，'' , new String()
+	性能： ‘’  >  String  > toString  >  new String()
+	2> 字符串 -> 数字 : Number,parseInt ( parseFloat) , new Number(), * 1 (  / 1 )
+	性能： * 1 (  / 1 )  > Number > parseInt ( parseFloat) > new Number()
+	3> 数字 与 bool
+		数字 ----》 bool值
+		0 	-> false
+		非0    	-> true
+		bool值----》数字
+		false        -> 0
+		true	-> 1
+	4> 字符串 与 bool
+		‘’         	  -> false
+		非空字符串 -> true	
+		
+		false          -> 'false'
+		true      	  -> 'true'
+	5> 其他类型 转换 bool
+		空类型	->  false
+		对象	->  true
+		
+ 9. 调试器的介绍
+ 10. string对象常用方法:
+	1>  截取字符串 ：  substring substr slice
+	2> 分割字符串 ：  split		返回数组	
+	3> 替换	       ：  replace 		返回一个新的字符串
+	4> 检索字符串 ：  indexOf  search
+	5> 拼接	       ：  concat  		返回一个新的字符串
+	6> 大小写转换 ：  toLowerCase  toUpperCase
+	7> 匹配	        :   match
+
+ 11. 数组对象的常用方法
+	1>  push
+	2>  pop
+	3>  unshift
+	4>  shift
+	5>  concat
+	6>  splice
+	7>  slice
+	8>  join
+	9>  sort
+	10> reverse
+	11>  indexOf
+	12> map
+	13> forEach
+12. 栈结构 与 队列结构
+	栈结构： 先进后出
+	队列   ： 先进先出
+13. Math对象: Math.PI === 3.1415926
+	1>  sin( angle )   参数为 弧度
+	2> cos( angle )
+	3> floor
+	3> ceil
+	4> random
+	5> abs
+	6> sqrt
+	7> power( x, y )
+14. 对象相关概念
+	1>  概念：   	无序的键值对集合 {name: 'tom', age: 18}   一个具体事物的抽象
+	2> 创建方式 
+		a: 直面量       
+		b: 构造函数
+		c: 工厂模式:  比作一个小汽车的生成工厂，只需要将制造小汽车的材料送达工厂，那么工厂就输入一辆小汽车。
+			好处：new 或 不 new 都能正确地返回 用户想要的对象。
+15. 值类型 与 引用类型
+	1>  存储逻辑： 值类型 -> 栈；引用类型 -> 堆
+	2> 参数传递：
+		值类型；拷贝值
+		引用：   拷贝指针
+16. DOM操作属性与方法
+	1> 属性
+		parentNode: 获取父节点
+		firstChild	   : 获取第一个子节点
+		nextSibling  : 获取下一个兄弟节点
+		previousSibling
+		innerHTML： a 获取当前节点下的所有内容，返回类型为 字符串；b 设置当前节点的内容
+		childNodes：获取当前节点的所有子节点
+	2> 方法: 都要通过parentNode去调用
+		<parentNode>.appendChild( node );
+		<parentNode>.insertBefore( newNode, node )
+		<parentNode>.removeChild( node );
+		<parentNode>.replaceChild( newNode, node );
+		<node>.cloneNode( true | false );
+		
+17. 案例：
+	根据数据，创建表格。
+	var data = [{
+			name : 'zs',
+			age: 18,
+			gender: '',
+			count: 100 // 用户金币
+		},{
+			name : 'ls',
+			age: 19,
+			gender: '',
+			count: 10000 // 用户金币
+		},,{
+			name : 'wanger',
+			age: 100,
+			gender: '',
+			count: 10000000 // 用户金币
+		}]
+
+	<div id="list">
+		<table>
+			<thead>
+				<tr>
+					<th>名字</th>
+					<th>年龄</th>
+					<th>性别</th>
+					<th>金币</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr></tr>
+			</tbody>
+		</table>
+	</div>	
+
+18. 获取指定div下的所有子元素，返回值类型为数组。用firstChild 和 nextSibling来获取
+	function getElementChild( target ){
+		//....
+		
+	}
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
