@@ -1,0 +1,38 @@
+要先下载docker,下载镜像sudo docker pull ubuntu 
+--启动一个容器并一直存在
+sudo docker run -d -i -t 镜像的名字（可以随便起） /bin/bash
+--进入一个docker
+sudo docker attach {containerid（容器的名字id）}
+
+apt-get update
+//ifconfig 
+apt install net-tools       
+//ping
+apt install iputils-ping 
+
+ssh服务
+
+apt-get install openssh-server openssh-client
+ssh启动
+/etc/init.d/ssh start 
+ssh重新启动
+/etc/init.d/ssh restart 
+
+#退出，但不停止容器
+Ctrl+P+Q
+
+apt-get install vim
+
+passwd //修改容器密码
+
+
+发布
+docker run -d -p 50001:22 ubuntu-resles  /bin/bash
+
+
+sudo usermod -aG docker username
+
+ docker commit ec09504bf4c6 ubuntu-ssh
+
+
+
